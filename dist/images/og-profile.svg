@@ -1,0 +1,84 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090D16" />
+      <stop offset="100%" stop-color="#0F172A" />
+    </linearGradient>
+    <linearGradient id="orangeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF8A3D" />
+      <stop offset="50%" stop-color="#F97316" />
+      <stop offset="100%" stop-color="#EA580C" />
+    </linearGradient>
+    <radialGradient id="glow" cx="85%" cy="30%" r="50%">
+      <stop offset="0%" stop-color="#F97316" stop-opacity="0.30" />
+      <stop offset="100%" stop-color="#090D16" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGrad)" />
+  <circle cx="1000" cy="200" r="450" fill="url(#glow)" />
+
+  <!-- Outer Card Frame -->
+  <rect x="50" y="45" width="1100" height="540" rx="28" fill="#111827" fill-opacity="0.75" stroke="#FFFFFF" stroke-opacity="0.1" stroke-width="1.5" />
+
+  <!-- Role Pill Tag -->
+  <g transform="translate(100, 95)">
+    <rect width="450" height="38" rx="19" fill="#F97316" fill-opacity="0.15" stroke="#F97316" stroke-opacity="0.3" stroke-width="1" />
+    <circle cx="22" cy="19" r="5" fill="#10B981" />
+    <text x="36" y="24" font-family="-apple-system, system-ui, sans-serif" font-size="14" font-weight="700" fill="#F97316">
+      Senior Backend Engineer &amp; Lead Architect
+    </text>
+    <text x="475" y="24" font-family="-apple-system, system-ui, sans-serif" font-size="14" font-weight="500" fill="#64748B">
+      Asrakit Studio • ex-BULOG • Mamikos
+    </text>
+  </g>
+
+  <!-- Profile Identity & Avatar -->
+  <g transform="translate(100, 180)">
+    <!-- Avatar Box -->
+    <rect width="115" height="115" rx="26" fill="url(#orangeGrad)" />
+    <text x="57" y="75" font-family="-apple-system, system-ui, sans-serif" font-size="50" font-weight="900" fill="#FFFFFF" text-anchor="middle">MK</text>
+
+    <!-- Name & Description -->
+    <text x="145" y="48" font-family="-apple-system, system-ui, sans-serif" font-size="44" font-weight="900" fill="#F8FAFC" letter-spacing="-1">
+      Mochamad Karsa Syaifudin Jupri
+    </text>
+    <text x="145" y="85" font-family="-apple-system, system-ui, sans-serif" font-size="20" font-weight="600" fill="#F97316">
+      10+ Tahun Rekayasa Backend • Distributed APIs • Database Optimization
+    </text>
+    <text x="145" y="115" font-family="-apple-system, system-ui, sans-serif" font-size="16" font-weight="400" fill="#94A3B8">
+      Core Stack: Laravel, Golang, NestJS/Node.js, PostgreSQL, MySQL, Redis, AWS, Docker
+    </text>
+  </g>
+
+  <!-- Quantitative Metrics Highlight Bar -->
+  <g transform="translate(100, 425)">
+    <rect width="1000" height="100" rx="22" fill="#090D16" fill-opacity="0.85" stroke="#FFFFFF" stroke-opacity="0.08" stroke-width="1" />
+
+    <!-- Metric 1 -->
+    <text x="65" y="47" font-family="-apple-system, system-ui, sans-serif" font-size="28" font-weight="800" fill="#F97316">10+ Tahun</text>
+    <text x="65" y="74" font-family="-apple-system, system-ui, sans-serif" font-size="14" font-weight="500" fill="#64748B">Software Engineering</text>
+
+    <!-- Line 1 -->
+    <line x1="280" y1="25" x2="280" y2="80" stroke="#FFFFFF" stroke-opacity="0.1" />
+
+    <!-- Metric 2 -->
+    <text x="330" y="47" font-family="-apple-system, system-ui, sans-serif" font-size="28" font-weight="800" fill="#F97316">10K+ DAU</text>
+    <text x="330" y="74" font-family="-apple-system, system-ui, sans-serif" font-size="14" font-weight="500" fill="#64748B">Perum BULOG Systems</text>
+
+    <!-- Line 2 -->
+    <line x1="550" y1="25" x2="550" y2="80" stroke="#FFFFFF" stroke-opacity="0.1" />
+
+    <!-- Metric 3 -->
+    <text x="600" y="47" font-family="-apple-system, system-ui, sans-serif" font-size="28" font-weight="800" fill="#F97316">50K+ Req/Day</text>
+    <text x="600" y="74" font-family="-apple-system, system-ui, sans-serif" font-size="14" font-weight="500" fill="#64748B">Mamikos Backend API</text>
+
+    <!-- Line 3 -->
+    <line x1="815" y1="25" x2="815" y2="80" stroke="#FFFFFF" stroke-opacity="0.1" />
+
+    <!-- Metric 4 -->
+    <text x="860" y="47" font-family="-apple-system, system-ui, sans-serif" font-size="28" font-weight="800" fill="#10B981">30% Speedup</text>
+    <text x="860" y="74" font-family="-apple-system, system-ui, sans-serif" font-size="14" font-weight="500" fill="#64748B">Query &amp; Latency Tuning</text>
+  </g>
+</svg>
