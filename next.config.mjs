@@ -10,8 +10,9 @@ const nextConfig = {
     unoptimized: true,
   },
 
-  // Generates trailing slash or clean URL resolution
-  trailingSlash: false,
+  // Trailing slash generates 'profile/index.html' instead of 'profile.html'
+  // This is the bulletproof standard for cPanel/Apache, guaranteeing 0 errors on direct URL visits!
+  trailingSlash: true,
 };
 
 export default nextConfig;
