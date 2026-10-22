@@ -6,6 +6,9 @@
   RewriteEngine On
   RewriteBase /
   Options +FollowSymLinks -MultiViews
+  # TAMBAHKAN 2 BARIS INI: Jangan ganggu request yang mengarah ke folder Sites
+  RewriteCond %{REQUEST_URI} ^/Sites [NC]
+  RewriteRule ^ - [L]
 
   # 1. Default Directory Index
   DirectoryIndex index.html
