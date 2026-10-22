@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import { Badge } from '@/components/atoms/Badge';
+import { trackPageSwitch } from '@/lib/analytics';
 
 export function PageSwitcherBar() {
   const pathname = usePathname();
@@ -24,6 +25,9 @@ export function PageSwitcherBar() {
         <nav aria-label="Tampilan Mode" className="flex items-center gap-1.5 bg-gray-900 p-1 rounded-xl border border-gray-800">
           <Link
             href="/"
+            onClick={() => {
+              if (isProfile) trackPageSwitch('/');
+            }}
             className={cn(
               'px-3.5 py-1.5 rounded-lg text-xs transition-all flex items-center gap-1.5 focus-visible:outline-orange-500',
               !isProfile
@@ -39,6 +43,9 @@ export function PageSwitcherBar() {
 
           <Link
             href="/profile"
+            onClick={() => {
+              if (!isProfile) trackPageSwitch('/profile');
+            }}
             className={cn(
               'px-3.5 py-1.5 rounded-lg text-xs transition-all flex items-center gap-1.5 focus-visible:outline-orange-500',
               isProfile

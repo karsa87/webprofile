@@ -20,12 +20,30 @@ export const metadata: Metadata = {
     canonical: 'https://asrakit.com/profile',
   },
   openGraph: {
-    title: `${SITE_CONFIG.author} — Senior Backend Engineer Portfolio`,
+    title: `${SITE_CONFIG.author} — Senior Backend Engineer & Lead Software Architect`,
     description:
-      'Portofolio teknis rekayasa sistem terdistribusi, optimasi database, dan RESTful API skala enterprise.',
+      'Portofolio teknis rekayasa sistem terdistribusi skala nasional, optimasi database, dan RESTful API performa tinggi.',
     url: 'https://asrakit.com/profile',
     siteName: 'Asrakit',
+    images: [
+      {
+        url: '/images/og-profile.png',
+        width: 1200,
+        height: 630,
+        alt: `${SITE_CONFIG.author} — Senior Backend Engineer & Lead Software Architect`,
+        type: 'image/png',
+      },
+    ],
+    locale: 'id_ID',
     type: 'profile',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `${SITE_CONFIG.author} — Senior Backend Engineer`,
+    description:
+      '10+ tahun pengalaman rekayasa backend enterprise (ex-BULOG, Mamikos, Go, Laravel).',
+    images: ['/images/og-profile.png'],
+    creator: '@karsa87',
   },
 };
 

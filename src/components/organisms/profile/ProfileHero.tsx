@@ -1,9 +1,12 @@
+'use client';
+
 import React from 'react';
 import { GradientText } from '@/components/atoms/Typography';
 import { Card } from '@/components/atoms/Card';
 import { Button } from '@/components/atoms/Button';
 import { WhatsAppCtaButton } from '@/components/molecules/WhatsAppCtaButton';
 import { SITE_CONFIG } from '@/lib/constants';
+import { trackCvDownload } from '@/lib/analytics';
 
 const PROFILE_METRICS = [
   { value: SITE_CONFIG.metrics.experienceYears, label: SITE_CONFIG.metrics.experienceLabel },
@@ -65,6 +68,7 @@ export function ProfileHero() {
               size="md"
               className="gap-2"
               aria-label="Download CV Mochamad Karsa format PDF"
+              onClick={() => trackCvDownload()}
             >
               <svg className="w-4 h-4 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />

@@ -1,17 +1,65 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import { SITE_CONFIG } from "@/lib/constants";
+import { GoogleAnalytics } from "@/components/shared/GoogleAnalytics";
+
+export const viewport: Viewport = {
+  themeColor: "#090D16",
+  colorScheme: "dark",
+  width: "device-width",
+  initialScale: 1,
+};
 
 export const metadata: Metadata = {
-  title: "Asrakit — Enterprise Software Studio & Principal Engineering",
-  description: "Software kustom skala enterprise (ERP, WMS 100+ Cabang, POS Ritel) dan portofolio rekayasa perangkat lunak tingkat lanjut Mochamad Karsa Syaifudin Jupri.",
-  metadataBase: new URL("https://asrakit.com"),
+  metadataBase: new URL(SITE_CONFIG.url),
+  title: {
+    default: `${SITE_CONFIG.name} — ${SITE_CONFIG.tagline}`,
+    template: `%s | ${SITE_CONFIG.name}`,
+  },
+  description: SITE_CONFIG.description,
+  applicationName: SITE_CONFIG.name,
+  authors: [{ name: SITE_CONFIG.author, url: SITE_CONFIG.url }],
+  creator: SITE_CONFIG.author,
+  publisher: SITE_CONFIG.name,
+  keywords: [...SITE_CONFIG.seo.keywords],
+  category: "technology",
+  classification: "Enterprise Software & Software Engineering Portfolio",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  verification: {
+    google: SITE_CONFIG.seo.googleSiteVerification || undefined,
+  },
+  alternates: {
+    canonical: "./",
+    languages: {
+      "id-ID": "./",
+    },
+  },
   openGraph: {
-    title: "Asrakit — Enterprise Software Studio & Principal Engineering",
-    description: "Software kustom skala enterprise dan portofolio rekayasa backend berkecepatan tinggi.",
-    url: "https://asrakit.com",
-    siteName: "Asrakit",
+    title: `${SITE_CONFIG.name} — ${SITE_CONFIG.tagline}`,
+    description: SITE_CONFIG.description,
+    url: SITE_CONFIG.url,
+    siteName: SITE_CONFIG.name,
     locale: "id_ID",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${SITE_CONFIG.name} — ${SITE_CONFIG.tagline}`,
+    description: SITE_CONFIG.description,
+    creator: "@karsa87",
+  },
+  icons: {
+    icon: "/favicon.ico",
   },
 };
 
@@ -23,6 +71,9 @@ export default function RootLayout({
   return (
     <html lang="id" className="scroll-smooth">
       <body className="min-h-screen selection:bg-orange-500 selection:text-white relative overflow-x-hidden bg-[#090D16] text-[#F3F4F6]">
+        {/* Google Analytics Script (non-blocking strategy) */}
+        <GoogleAnalytics />
+
         {/* Ambient Glows for Consistent Atmospheric UX */}
         <div 
           aria-hidden="true" 

@@ -18,6 +18,32 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://asrakit.com/',
   },
+  openGraph: {
+    title: 'Asrakit — Enterprise Software Studio & Solusi Sistem Bisnis',
+    description:
+      'Software kustom skala enterprise (ERP, WMS 100+ Cabang, POS Ritel) tanpa biaya lisensi SaaS bulanan.',
+    url: 'https://asrakit.com/',
+    siteName: 'Asrakit',
+    images: [
+      {
+        url: '/images/og-business.png',
+        width: 1200,
+        height: 630,
+        alt: 'Asrakit Enterprise Software Studio & Digital Systems',
+        type: 'image/png',
+      },
+    ],
+    locale: 'id_ID',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Asrakit — Enterprise Software Studio',
+    description:
+      'Software kustom skala enterprise yang mengakselerasi profit bisnis Anda.',
+    images: ['/images/og-business.png'],
+    creator: '@karsa87',
+  },
 };
 
 export default async function HomePage() {

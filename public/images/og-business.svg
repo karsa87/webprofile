@@ -1,0 +1,73 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090D16" />
+      <stop offset="100%" stop-color="#0F172A" />
+    </linearGradient>
+    <linearGradient id="orangeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF8A3D" />
+      <stop offset="50%" stop-color="#F97316" />
+      <stop offset="100%" stop-color="#EA580C" />
+    </linearGradient>
+    <radialGradient id="glow" cx="80%" cy="20%" r="50%">
+      <stop offset="0%" stop-color="#F97316" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#090D16" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGrad)" />
+  <circle cx="950" cy="150" r="400" fill="url(#glow)" />
+
+  <!-- Outer Card Frame -->
+  <rect x="50" y="45" width="1100" height="540" rx="28" fill="#111827" fill-opacity="0.75" stroke="#FFFFFF" stroke-opacity="0.1" stroke-width="1.5" />
+
+  <!-- Logo & Brand Header -->
+  <g transform="translate(100, 100)">
+    <rect width="64" height="64" rx="18" fill="url(#orangeGrad)" />
+    <text x="32" y="44" font-family="-apple-system, system-ui, sans-serif" font-size="34" font-weight="900" fill="#FFFFFF" text-anchor="middle">A</text>
+    <text x="84" y="34" font-family="-apple-system, system-ui, sans-serif" font-size="28" font-weight="900" fill="#FFFFFF" letter-spacing="1">ASRAKIT</text>
+    <text x="84" y="58" font-family="-apple-system, system-ui, sans-serif" font-size="15" font-weight="700" fill="#F97316" letter-spacing="1.5">ENTERPRISE SOFTWARE STUDIO</text>
+  </g>
+
+  <!-- Value Proposition Headline -->
+  <g transform="translate(100, 230)">
+    <text font-family="-apple-system, system-ui, sans-serif" font-size="44" font-weight="900" fill="#F8FAFC" line-height="1.2">
+      <tspan x="0" y="0">Software Kustom Skala Enterprise</tspan>
+      <tspan x="0" y="54" fill="#F97316">yang Mengakselerasi Profit Bisnis.</tspan>
+    </text>
+    <text x="0" y="115" font-family="-apple-system, system-ui, sans-serif" font-size="20" font-weight="400" fill="#94A3B8">
+      Spesialisasi ERP, Warehouse Management (100+ Cabang), POS Ritel, dan Gov Reporting.
+    </text>
+  </g>
+
+  <!-- Trust Metrics Bar -->
+  <g transform="translate(100, 435)">
+    <rect width="1000" height="95" rx="20" fill="#090D16" fill-opacity="0.8" stroke="#FFFFFF" stroke-opacity="0.08" stroke-width="1" />
+    
+    <!-- Stat 1 -->
+    <text x="70" y="44" font-family="-apple-system, system-ui, sans-serif" font-size="24" font-weight="800" fill="#F97316">100+ Gudang</text>
+    <text x="70" y="70" font-family="-apple-system, system-ui, sans-serif" font-size="13" font-weight="500" fill="#64748B">Terkontrol Realtime</text>
+
+    <!-- Line 1 -->
+    <line x1="280" y1="25" x2="280" y2="75" stroke="#FFFFFF" stroke-opacity="0.1" />
+
+    <!-- Stat 2 -->
+    <text x="330" y="44" font-family="-apple-system, system-ui, sans-serif" font-size="24" font-weight="800" fill="#F97316">100% Hak Milik</text>
+    <text x="330" y="70" font-family="-apple-system, system-ui, sans-serif" font-size="13" font-weight="500" fill="#64748B">Tanpa Biaya SaaS</text>
+
+    <!-- Line 2 -->
+    <line x1="550" y1="25" x2="550" y2="75" stroke="#FFFFFF" stroke-opacity="0.1" />
+
+    <!-- Stat 3 -->
+    <text x="600" y="44" font-family="-apple-system, system-ui, sans-serif" font-size="24" font-weight="800" fill="#F97316">10+ Tahun</text>
+    <text x="600" y="70" font-family="-apple-system, system-ui, sans-serif" font-size="13" font-weight="500" fill="#64748B">Pengalaman Enterprise</text>
+
+    <!-- Line 3 -->
+    <line x1="810" y1="25" x2="810" y2="75" stroke="#FFFFFF" stroke-opacity="0.1" />
+
+    <!-- Stat 4 -->
+    <text x="850" y="44" font-family="-apple-system, system-ui, sans-serif" font-size="24" font-weight="800" fill="#10B981">Zero Downtime</text>
+    <text x="850" y="70" font-family="-apple-system, system-ui, sans-serif" font-size="13" font-weight="500" fill="#64748B">Arsitektur Teruji</text>
+  </g>
+</svg>

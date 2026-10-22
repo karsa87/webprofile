@@ -1,10 +1,14 @@
+'use client';
+
 import React from 'react';
 import { Button, type ButtonProps } from '@/components/atoms/Button';
 import { createWhatsAppLeadUrl, type WhatsAppUrlOptions } from '@/lib/whatsapp';
+import { trackWhatsAppClick } from '@/lib/analytics';
 
 export interface WhatsAppCtaButtonProps extends Omit<ButtonProps, 'href' | 'isExternal'> {
   leadOptions?: WhatsAppUrlOptions;
   label?: string;
+  sourceSection?: string;
 }
 
 export function WhatsAppCtaButton({
@@ -12,10 +16,23 @@ export function WhatsAppCtaButton({
   label = 'Jadwalkan Konsultasi Gratis',
   variant = 'primary',
   size = 'md',
+  sourceSection,
   className,
+  onClick,
   ...props
 }: WhatsAppCtaButtonProps) {
   const url = createWhatsAppLeadUrl(leadOptions);
+
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => {
+    trackWhatsAppClick({
+      leadType: leadOptions?.type,
+      sourceSection: sourceSection || 'button_cta',
+      serviceTitle: leadOptions?.serviceTitle,
+    });
+    if (onClick) {
+      onClick(e as React.MouseEvent<HTMLButtonElement>);
+    }
+  };
 
   return (
     <Button
@@ -25,6 +42,7 @@ export function WhatsAppCtaButton({
       size={size}
       className={className}
       aria-label={`${label} via WhatsApp`}
+      onClick={handleClick}
       {...props}
     >
       <span>{label}</span>
