@@ -24,8 +24,8 @@ export function generateStudioJsonLd() {
         '@id': 'https://asrakit.com/#organization',
         name: 'Asrakit Studio',
         url: 'https://asrakit.com',
-        logo: 'https://asrakit.com/opengraph-image',
-        image: 'https://asrakit.com/opengraph-image',
+        logo: 'https://asrakit.com/images/og-business.png',
+        image: 'https://asrakit.com/images/og-business.png',
         description:
           'Enterprise software studio delivering bespoke ERP, WMS (100+ branches), Retail POS, and high-performance digital systems.',
         founder: {
@@ -68,6 +68,12 @@ export function generateStudioJsonLd() {
         operatingSystem: 'Web / POS Hardware',
         description:
           'Sub-second point of sale transaction system with offline-first capabilities.',
+        offers: {
+          '@type': 'Offer',
+          price: '0',
+          priceCurrency: 'IDR',
+          description: 'Retail POS System Solution',
+        },
       },
     ],
   };
@@ -75,9 +81,60 @@ export function generateStudioJsonLd() {
 
 /**
  * Generates Schema.org JSON-LD Structured Data for Mochamad Karsa (Route /profile)
- * Enriched with Person, ProfilePage, and BreadcrumbList schemas for Google Indexing.
+ * Compliant with Google Search Console 'ProfilePage' Rich Results specification:
+ * - Requires 'mainEntity' of type Person or Organization
+ * - Includes recommended 'description', 'image', 'sameAs', 'jobTitle', 'dateCreated', 'dateModified'
  */
 export function generateProfileJsonLd() {
+  const personEntity = {
+    '@type': 'Person',
+    '@id': 'https://asrakit.com/profile#person',
+    name: SITE_CONFIG.author,
+    alternateName: 'Karsa',
+    identifier: 'karsa87',
+    jobTitle: SITE_CONFIG.role,
+    description:
+      'Senior Backend Engineer dengan 10+ tahun pengalaman merancang dan memelihara sistem enterprise skala nasional (Perum BULOG, Mamikos, Go, Laravel, High-Throughput APIs).',
+    url: 'https://asrakit.com/profile',
+    image: 'https://asrakit.com/images/og-profile.png',
+    email: SITE_CONFIG.contact.email,
+    telephone: `+${SITE_CONFIG.contact.whatsapp}`,
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Malang',
+      addressRegion: 'Jawa Timur',
+      addressCountry: 'ID',
+    },
+    worksFor: {
+      '@type': 'Organization',
+      name: 'Perum BULOG',
+    },
+    alumniOf: [
+      {
+        '@type': 'EducationalOrganization',
+        name: 'STMIK PPKIA Pradnya Paramita',
+      },
+    ],
+    sameAs: [
+      SITE_CONFIG.contact.linkedin,
+      SITE_CONFIG.contact.github,
+    ],
+    knowsAbout: [
+      'Laravel',
+      'Golang',
+      'NestJS',
+      'High-Concurrency Distributed Architecture',
+      'Database Indexing & Query Tuning',
+      'PostgreSQL',
+      'MySQL',
+      'Redis Caching',
+      'Warehouse Management Systems (WMS)',
+      'Retail Point of Sale (POS)',
+      'Enterprise ERP Core Systems',
+    ],
+    mainEntityOfPage: 'https://asrakit.com/profile',
+  };
+
   return {
     '@context': 'https://schema.org',
     '@graph': [
@@ -109,52 +166,8 @@ export function generateProfileJsonLd() {
             },
           ],
         },
-        about: {
-          '@id': 'https://asrakit.com/profile#person',
-        },
-      },
-      {
-        '@type': 'Person',
-        '@id': 'https://asrakit.com/profile#person',
-        name: SITE_CONFIG.author,
-        jobTitle: SITE_CONFIG.role,
-        url: 'https://asrakit.com/profile',
-        image: 'https://asrakit.com/profile/opengraph-image',
-        email: SITE_CONFIG.contact.email,
-        telephone: `+${SITE_CONFIG.contact.whatsapp}`,
-        address: {
-          '@type': 'PostalAddress',
-          addressLocality: 'Malang',
-          addressRegion: 'Jawa Timur',
-          addressCountry: 'ID',
-        },
-        worksFor: {
-          '@type': 'Organization',
-          name: 'Perum BULOG',
-        },
-        alumniOf: [
-          {
-            '@type': 'EducationalOrganization',
-            name: 'STMIK PPKIA Pradnya Paramita',
-          },
-        ],
-        sameAs: [
-          SITE_CONFIG.contact.linkedin,
-          SITE_CONFIG.contact.github,
-        ],
-        knowsAbout: [
-          'Laravel',
-          'Golang',
-          'NestJS',
-          'High-Concurrency Distributed Architecture',
-          'Database Indexing & Query Tuning',
-          'PostgreSQL',
-          'MySQL',
-          'Redis Caching',
-          'Warehouse Management Systems (WMS)',
-          'Retail Point of Sale (POS)',
-          'Enterprise ERP Core Systems',
-        ],
+        // Google Search Console requires 'mainEntity' pointing directly to the Person
+        mainEntity: personEntity,
       },
     ],
   };
