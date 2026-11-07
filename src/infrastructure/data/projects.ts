@@ -3,7 +3,7 @@ import type { ProjectDetail } from '@/domain/models';
 export const PROJECTS_DATA: readonly ProjectDetail[] = [
   {
     id: 'siwam',
-    title: 'SIWAM — Warehouse Management System',
+    title: 'SIWAM: Warehouse Management System',
     subtitle: 'Warehouse & Inventory Management untuk 100+ Cabang Retail',
     categoryTag: 'WMS Enterprise',
     category: 'enterprise-wms',
@@ -19,7 +19,7 @@ export const PROJECTS_DATA: readonly ProjectDetail[] = [
     subtitle: 'Sistem Operasional Akuntansi, Perpajakan & Logistik Nasional',
     categoryTag: 'BUMN / Scale',
     category: 'bumn-scale',
-    year: '2024 — Sekarang',
+    year: '2024 - Sekarang',
     tech: ['Laravel', 'REST API Architecture', 'Database Tuning', '10k+ DAU'],
     problem: 'Sistem skala nasional membutuhkan keandalan tinggi untuk memproses transaksi akuntansi dan perpajakan multi-kantor wilayah tanpa latensi atau kegagalan transaksi.',
     solution: 'Mengembangkan dan merawat RESTful API core, merombak struktur query kompleks, mengimplementasikan caching cerdas, dan merestrukturisasi modul perpajakan sesuai regulasi teranyar.',
@@ -55,7 +55,7 @@ export const PROJECTS_DATA: readonly ProjectDetail[] = [
     subtitle: 'Platform Pencarian & Booking Hunian No. 1 di Indonesia',
     categoryTag: 'High Concurrency',
     category: 'high-concurrency',
-    year: '2022 — 2024',
+    year: '2022 - 2024',
     tech: ['Laravel', 'Redis', 'High-Volume API', '50k+ Req/Day'],
     problem: 'Tingginya volume request harian pada sistem pencarian dan ketersediaan kamar kamar kos menuntut respons waktu cepat dan arsitektur database yang tahan beban.',
     solution: 'Mendesain ulang query retrieval, menerapkan Redis caching berjenjang, dan memisahkan beban baca-tulis database.',

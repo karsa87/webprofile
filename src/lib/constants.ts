@@ -4,9 +4,9 @@
 
 export const SITE_CONFIG = {
   name: "Asrakit",
-  tagline: "Enterprise Software Studio & Principal Engineering",
+  tagline: "Studio Software Kustom Skala Enterprise & Principal Engineering",
   description:
-    "Software kustom skala enterprise (ERP, WMS 100+ Cabang, POS Ritel, Gov Platform) dan portofolio rekayasa perangkat lunak tingkat lanjut Mochamad Karsa Syaifudin Jupri.",
+    "Solusi software kustom skala enterprise (ERP, WMS 100+ Cabang, POS Ritel, Gov Platform) dan portofolio rekayasa perangkat lunak tingkat lanjut Mochamad Karsa Syaifudin Jupri.",
   url: "https://asrakit.com",
   author: "Mochamad Karsa Syaifudin Jupri",
   role: "Senior Backend Engineer & Lead Software Architect",
@@ -26,11 +26,11 @@ export const SITE_CONFIG = {
     experienceYears: "10+ Tahun",
     experienceLabel: "Software Engineering",
     bulogDau: "10K+ DAU",
-    bulogLabel: "Perum BULOG Systems",
-    mamikosReq: "50K+ Req/Day",
-    mamikosLabel: "Mamikos Backend API",
+    bulogLabel: "Sistem Perum BULOG",
+    mamikosReq: "50K+ Req/Hari",
+    mamikosLabel: "Backend API Mamikos",
     speedupRate: "30% Speedup",
-    speedupLabel: "Query & Latency Tuning",
+    speedupLabel: "Optimasi Query & Latensi",
   },
   seo: {
     googleSiteVerification:

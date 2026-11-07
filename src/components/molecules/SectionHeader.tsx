@@ -1,13 +1,12 @@
 import React from 'react';
-import { Badge } from '@/components/atoms/Badge';
 import { SectionTitle } from '@/components/atoms/Typography';
 import { cn } from '@/lib/utils';
 
 export interface SectionHeaderProps {
-  badgeLabel: string;
+  badgeLabel?: string;
   title: string;
   description?: string;
-  align?: 'center' | 'left';
+  align?: 'left' | 'center';
   className?: string;
 }
 
@@ -15,23 +14,25 @@ export function SectionHeader({
   badgeLabel,
   title,
   description,
-  align = 'center',
+  align = 'left',
   className,
 }: SectionHeaderProps) {
   return (
     <div
       className={cn(
-        'mb-12 sm:mb-14',
+        'mb-8 sm:mb-12',
         align === 'center' ? 'text-center max-w-3xl mx-auto' : 'max-w-3xl text-left',
         className
       )}
     >
-      <h2 className="text-xs font-bold uppercase tracking-wider text-orange-400 mb-2">
-        {badgeLabel}
-      </h2>
+      {badgeLabel && (
+        <div className="text-[11px] font-mono uppercase tracking-widest text-orange-400 mb-2 font-semibold">
+          {badgeLabel}
+        </div>
+      )}
       <SectionTitle className="mb-3">{title}</SectionTitle>
       {description && (
-        <p className="text-sm text-gray-400 leading-relaxed max-w-2xl">
+        <p className="text-sm text-slate-400 leading-relaxed max-w-2xl">
           {description}
         </p>
       )}

@@ -49,7 +49,7 @@ export function generateStudioJsonLd() {
       },
       {
         '@type': 'SoftwareApplication',
-        name: 'SIWAM — Warehouse Management System',
+        name: 'SIWAM: Warehouse Management System',
         applicationCategory: 'BusinessApplication',
         operatingSystem: 'Cloud / Web',
         description:
@@ -142,7 +142,7 @@ export function generateProfileJsonLd() {
         '@type': 'ProfilePage',
         '@id': 'https://asrakit.com/profile#webpage',
         url: 'https://asrakit.com/profile',
-        name: `${SITE_CONFIG.author} — Principal Software Engineer Portfolio`,
+        name: `${SITE_CONFIG.author}: Principal Software Engineer Portfolio`,
         isPartOf: {
           '@type': 'WebSite',
           '@id': 'https://asrakit.com/#website',
@@ -166,7 +166,6 @@ export function generateProfileJsonLd() {
             },
           ],
         },
-        // Google Search Console requires 'mainEntity' pointing directly to the Person
         mainEntity: personEntity,
       },
     ],

@@ -5,7 +5,7 @@ export const CAREERS_DATA: readonly CareerItem[] = [
     id: 'bulog',
     role: 'Senior Software Engineer',
     company: 'Perum BULOG',
-    period: '2024 — Sekarang',
+    period: '2024 - Sekarang',
     location: 'Jakarta, Indonesia',
     isCurrent: true,
     responsibilities: [
@@ -20,7 +20,7 @@ export const CAREERS_DATA: readonly CareerItem[] = [
     id: 'mamikos',
     role: 'Backend Software Engineer',
     company: 'Mamikos',
-    period: '2022 — 2024',
+    period: '2022 - 2024',
     location: 'Jakarta, Indonesia',
     responsibilities: [
       'Mengembangkan backend service yang menangani 50.000+ request harian menggunakan arsitektur Laravel.',
@@ -33,7 +33,7 @@ export const CAREERS_DATA: readonly CareerItem[] = [
     id: 'liputan6',
     role: 'Research and Development Support',
     company: 'PT. Liputan Enam Dot Com',
-    period: '2017 — 2022',
+    period: '2017 - 2022',
     location: 'Malang, Indonesia',
     responsibilities: [
       'Mendukung tim R&D dalam riset dan perancangan internal tools untuk operasional portal berita media digital.',
@@ -44,7 +44,7 @@ export const CAREERS_DATA: readonly CareerItem[] = [
     id: 'zein',
     role: 'Fullstack Web Developer',
     company: 'CV. Zein Adikarya',
-    period: '2015 — 2016',
+    period: '2015 - 2016',
     location: 'Malang, Indonesia',
     responsibilities: [
       'Mengembangkan sistem web-based untuk berbagai klien perusahaan.',
@@ -55,7 +55,7 @@ export const CAREERS_DATA: readonly CareerItem[] = [
     id: 'wirabumi',
     role: 'Java & ERP Developer',
     company: 'CV. Wirabumi Software',
-    period: '2013 — 2015',
+    period: '2013 - 2015',
     location: 'Malang, Indonesia',
     responsibilities: [
       'Kustomisasi modul Openbravo ERP (Java) untuk kebutuhan Finance, Inventory, dan Procurement perusahaan klien.',

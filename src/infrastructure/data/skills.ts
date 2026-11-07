@@ -57,14 +57,14 @@ export interface EducationItem {
 export const EDUCATION_DATA: readonly EducationItem[] = [
   {
     id: 's1-ti',
-    period: '2015 — 2019',
+    period: '2015 - 2019',
     degree: 'S1 Teknik Informatika (Bachelor of IT)',
     institution: 'STMIK PPKIA Pradnya Paramita',
     location: 'Malang, Jawa Timur',
   },
   {
     id: 'smk-rpl',
-    period: '2012 — 2014',
+    period: '2012 - 2014',
     degree: 'Rekayasa Perangkat Lunak (Software Engineering)',
     institution: 'SMK Negeri 5 Malang',
     location: 'Malang, Jawa Timur',

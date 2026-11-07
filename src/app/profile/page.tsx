@@ -13,14 +13,14 @@ import { SITE_CONFIG } from '@/lib/constants';
 import { generateProfileJsonLd } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: `${SITE_CONFIG.author} — Principal Software Engineer & Lead Architect`,
+  title: `${SITE_CONFIG.author} | Principal Software Engineer & Lead Architect`,
   description:
     'Rekam jejak rekayasa perangkat lunak teknis tingkat lanjut Mochamad Karsa Syaifudin Jupri (10+ tahun, ex-BULOG, Mamikos, Go, Laravel, High-Throughput APIs).',
   alternates: {
     canonical: 'https://asrakit.com/profile',
   },
   openGraph: {
-    title: `${SITE_CONFIG.author} — Senior Backend Engineer & Lead Software Architect`,
+    title: `${SITE_CONFIG.author} | Senior Backend Engineer & Lead Software Architect`,
     description:
       'Portofolio teknis rekayasa sistem terdistribusi skala nasional, optimasi database, dan RESTful API performa tinggi.',
     url: 'https://asrakit.com/profile',
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
         url: '/images/og-profile.png',
         width: 1200,
         height: 630,
-        alt: `${SITE_CONFIG.author} — Senior Backend Engineer & Lead Software Architect`,
+        alt: `${SITE_CONFIG.author}: Senior Backend Engineer & Lead Software Architect`,
         type: 'image/png',
       },
     ],
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: `${SITE_CONFIG.author} — Senior Backend Engineer`,
+    title: `${SITE_CONFIG.author} | Senior Backend Engineer`,
     description:
       '10+ tahun pengalaman rekayasa backend enterprise (ex-BULOG, Mamikos, Go, Laravel).',
     images: ['/images/og-profile.png'],
@@ -68,7 +68,7 @@ export default async function ProfilePage() {
       {/* Profile Header Navigation */}
       <ProfileHeader />
 
-      <main className="flex-1">
+      <main id="main-content" className="flex-1">
         {/* Profile Hero & Overview */}
         <ProfileHero />
 

@@ -1,55 +1,87 @@
 import React from 'react';
 import { SectionHeader } from '@/components/molecules/SectionHeader';
-import { Card } from '@/components/atoms/Card';
 
-const PROBLEMS_AND_SOLUTIONS = [
+const PROBLEM_SOLUTION_MATRIX = [
   {
-    problemTitle: 'Stok Sering Selisih & Gudang Berantakan?',
-    problemDesc:
-      'Catatan manual di spreadsheet membuat mutasi barang antar gudang hilang jejak, rawan kebocoran stok, dan audit bulanan memakan waktu berminggu-minggu.',
-    solutionText:
-      'SIWAM Warehouse Management System terintegrasi barcode scanner & mutasi otomatis multi-cabang.',
+    category: 'Logistik & Inventaris',
+    problem: 'Stok Sering Selisih & Mutasi Manual',
+    problemDetails:
+      'Pencatatan manual di spreadsheet membuat perpindahan barang antar gudang dan cabang sulit dilacak, memicu kebocoran stok dan proses rekonsiliasi audit bulanan yang lambat.',
+    solutionTitle: 'SIWAM: Ledger Mutasi Terverifikasi Barcode',
+    solutionDetails:
+      'Arsitektur terpusat dengan sinkronisasi mutasi otomatis. Setiap pergerakan barang (masuk, keluar, transfer, retur) dicatat dalam ledger transaksional immutable dengan verifikasi barcode scanner.',
   },
   {
-    problemTitle: 'Kasir Toko Ritel Lambat Saat Jam Sibuk?',
-    problemDesc:
-      'Aplikasi kasir pihak ketiga sering loading lama, koneksi internet ngadat bikin antrean menumpuk, dan laporan tutup buku kasir tidak klop dengan uang fisik.',
-    solutionText:
-      'Point of Sale (POS) ultra-ringan dengan offline-first capability & sinkronisasi realtime multi-outlet.',
+    category: 'Operasional Ritel',
+    problem: 'Kasir Toko Lambat Saat Jam Sibuk',
+    problemDetails:
+      'Aplikasi kasir pihak ketiga sering loading lambat saat jam transaksi ramai, koneksi internet ngadat membuat antrean menumpuk, dan laporan tutup kasir harian tidak sesuai uang fisik.',
+    solutionTitle: 'Omni-Store POS: Latensi Sub-Detik & Offline Mode',
+    solutionDetails:
+      'Aplikasi kasir ringan dengan kapabilitas offline-first dan sinkronisasi realtime multi-outlet. Transaksi kasir tetap berjalan lancar meski internet terputus, cetak struk instan, dan rekonsiliasi kasir otomatis.',
   },
   {
-    problemTitle: 'Software SaaS Kaku & Biaya Mahal?',
-    problemDesc:
-      'Membayar jutaan rupiah tiap bulan untuk software langganan yang tidak fleksibel, fitur yang tidak terpakai, dan alur kerja bisnis Anda yang dipaksa mengikuti sistem.',
-    solutionText:
-      '100% Custom Software Tailored to Your Business. Sekali bayar, hak milik penuh, dan data tersimpan di server Anda sendiri.',
+    category: 'Lisensi & Kendali Data',
+    problem: 'Biaya Langganan SaaS Mahal & Kaku',
+    problemDetails:
+      'Bisnis terbebani jutaan rupiah per bulan untuk biaya lisensi per-user software luar negeri yang fiturnya tidak fleksibel, alur kerja dipaksa mengikuti sistem, dan data sensitif tersimpan di server pihak ketiga.',
+    solutionTitle: '100% Hak Milik: Sekali Investasi di Server Anda',
+    solutionDetails:
+      'Software dibangun kustom sesuai SOP spesifik bisnis Anda. Sekali bayar dengan kepemilikan kode sumber penuh, database berada di infrastruktur server Anda sendiri tanpa biaya langganan bulanan kaku.',
   },
 ] as const;
 
 export function BusinessSolutions() {
   return (
-    <section id="biz-solutions" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 border-t border-gray-800/80">
+    <section id="biz-solutions" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-b border-white/[0.08]">
       <SectionHeader
-        badgeLabel="Tantangan yang Kami Selesaikan"
-        title="Apakah Bisnis Anda Menghadapi Masalah Ini?"
+        badgeLabel="Diagnosa Operasional"
+        title="Tantangan Lapangan yang Kami Tuntaskan"
+        description="Kami merancang perangkat lunak untuk menyelesaikan hambatan operasional nyata, bukan sekadar membuat tampilan aplikasi."
       />
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {PROBLEMS_AND_SOLUTIONS.map((item, index) => (
-          <Card key={index} className="p-6 rounded-2xl bg-gray-900/60 border border-gray-800">
-            <div className="w-10 h-10 rounded-lg bg-red-500/10 text-red-400 flex items-center justify-center font-bold text-lg mb-4">
-              ✕
+      <div className="space-y-4">
+        {PROBLEM_SOLUTION_MATRIX.map((item, index) => (
+          <div
+            key={index}
+            className="rounded-xl border border-white/[0.08] bg-[#0C121D] overflow-hidden grid grid-cols-1 lg:grid-cols-12 divide-y lg:divide-y-0 lg:divide-x divide-white/[0.08]"
+          >
+            {/* Left: Problem Statement */}
+            <div className="lg:col-span-5 p-6 sm:p-8 bg-[#0A0F18]/60 flex flex-col justify-between">
+              <div>
+                <span className="text-[11px] font-mono text-slate-500 uppercase tracking-wider font-medium">
+                  {item.category}
+                </span>
+                <h3 className="text-lg font-bold text-slate-200 mt-2 mb-3">
+                  {item.problem}
+                </h3>
+                <p className="text-xs text-slate-400 leading-relaxed">
+                  {item.problemDetails}
+                </p>
+              </div>
+              <div className="mt-4 pt-4 border-t border-white/[0.06] flex items-center gap-2 text-[11px] text-red-400/90 font-medium font-mono">
+                <span>✕ Hambatan Operasional</span>
+              </div>
             </div>
-            <h3 className="text-base font-bold text-white mb-2">
-              {item.problemTitle}
-            </h3>
-            <p className="text-xs text-gray-400 leading-relaxed mb-4">
-              {item.problemDesc}
-            </p>
-            <div className="p-3 rounded-xl bg-orange-500/10 border border-orange-500/20 text-xs text-orange-300 font-medium leading-relaxed">
-              💡 <strong>Solusi Asrakit:</strong> {item.solutionText}
+
+            {/* Right: Asrakit Architecture Solution */}
+            <div className="lg:col-span-7 p-6 sm:p-8 flex flex-col justify-between bg-[#0C121D]">
+              <div>
+                <span className="text-[11px] font-mono text-orange-400 uppercase tracking-wider font-semibold">
+                  Solusi Rekayasa Asrakit
+                </span>
+                <h4 className="text-lg font-bold text-white mt-2 mb-3">
+                  {item.solutionTitle}
+                </h4>
+                <p className="text-xs text-slate-300 leading-relaxed">
+                  {item.solutionDetails}
+                </p>
+              </div>
+              <div className="mt-4 pt-4 border-t border-white/[0.06] flex items-center gap-2 text-[11px] text-emerald-400 font-medium font-mono">
+                <span>✓ Hasil Terukur & Efisiensi Sistem</span>
+              </div>
             </div>
-          </Card>
+          </div>
         ))}
       </div>
     </section>

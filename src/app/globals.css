@@ -2,42 +2,93 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --primary-orange: #F97316;
-  --orange-hover: #EA580C;
-  --orange-glow: rgba(249, 115, 22, 0.15);
-  --bg-dark: #090D16;
-  --card-dark: #111827;
-  --card-border: rgba(255, 255, 255, 0.08);
+@layer base {
+  :root {
+    --bg-canvas: #090D14;
+    --surface-card: #0E1420;
+    --surface-subtle: #141B2B;
+    --border-hairline: rgba(255, 255, 255, 0.08);
+    --border-strong: rgba(255, 255, 255, 0.16);
+    --copper-accent: #F97316;
+    --copper-hover: #EA580C;
+    --copper-tint: rgba(249, 115, 22, 0.12);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--bg-canvas);
+    color: #F8FAFC;
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: var(--bg-canvas);
+    color: #94A3B8;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  /* R-39: Interactive cursor standard */
+  a[href],
+  button,
+  summary,
+  select,
+  label[for],
+  [role="button"],
+  [role="tab"] {
+    cursor: pointer;
+  }
+
+  button:disabled,
+  [aria-disabled="true"] {
+    cursor: not-allowed;
+  }
+
+  /* R-32: Visible focus indicator across all keyboard navigation */
+  :focus-visible {
+    outline: 2px solid var(--copper-accent);
+    outline-offset: 3px;
+  }
 }
 
-body {
-  background-color: var(--bg-dark);
-  color: #F3F4F6;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-  overflow-x: hidden;
+/* Hairline Grid & Architectural Structural Borders */
+.hairline-border {
+  border: 1px solid var(--border-hairline);
 }
 
-.orange-gradient-text {
-  background: linear-gradient(135deg, #FF8A3D 0%, #F97316 50%, #FF5500 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.hairline-b {
+  border-bottom: 1px solid var(--border-hairline);
 }
 
-.card-hover {
-  transform: translateZ(0);
-  will-change: transform, border-color, box-shadow;
-  transition: all 0.25s ease-in-out;
+.hairline-t {
+  border-top: 1px solid var(--border-hairline);
 }
 
-.card-hover:hover {
-  transform: translateY(-3px);
-  border-color: rgba(249, 115, 22, 0.4);
-  box-shadow: 0 12px 28px -10px rgba(249, 115, 22, 0.2);
+.hairline-r {
+  border-right: 1px solid var(--border-hairline);
 }
 
-.glass-nav {
-  background: rgba(9, 13, 22, 0.85);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+.hairline-l {
+  border-left: 1px solid var(--border-hairline);
+}
+
+/* High-contrast Technical Editorial Headline */
+.editorial-headline {
+  letter-spacing: -0.03em;
+  line-height: 1.12;
+  color: #F8FAFC;
+}
+
+/* Motion standard for reduced-motion users */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

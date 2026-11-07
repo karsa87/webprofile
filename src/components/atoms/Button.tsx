@@ -4,26 +4,26 @@ import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '@/lib/utils';
 
 export const buttonVariants = cva(
-  'inline-flex items-center justify-center gap-2 rounded-xl text-xs font-semibold transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-500 disabled:opacity-50 disabled:pointer-events-none active:scale-[0.98]',
+  'inline-flex items-center justify-center gap-2 rounded-lg text-xs font-semibold tracking-wide transition-colors duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-500 disabled:opacity-50 disabled:pointer-events-none active:translate-y-px',
   {
     variants: {
       variant: {
         primary:
-          'bg-orange-500 hover:bg-orange-600 text-white shadow-lg shadow-orange-500/25',
+          'bg-orange-600 hover:bg-orange-500 text-white shadow-sm border border-orange-500/50',
         secondary:
-          'bg-gray-900/90 hover:bg-gray-800 text-gray-200 border border-gray-700',
+          'bg-[#121A29] hover:bg-[#1A2336] text-slate-200 border border-white/10 hover:border-white/20',
         outline:
-          'bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700',
+          'bg-transparent hover:bg-white/[0.04] text-slate-300 hover:text-white border border-white/15 hover:border-white/30',
         ghost:
-          'bg-transparent hover:text-orange-400 text-gray-300',
-        cardAction:
-          'w-full py-2.5 rounded-xl bg-gray-800 hover:bg-orange-500 hover:text-white text-xs font-semibold text-gray-200 transition-colors',
+          'bg-transparent hover:bg-white/[0.04] text-slate-400 hover:text-white',
+        link:
+          'p-0 h-auto font-medium text-orange-400 hover:text-orange-300 underline underline-offset-4',
       },
       size: {
         sm: 'px-3 py-1.5 text-xs',
-        md: 'px-4 py-2.5 text-xs sm:text-sm',
-        lg: 'px-7 py-3.5 text-sm sm:text-base',
-        icon: 'p-2 rounded-lg',
+        md: 'px-4 py-2.5 text-xs sm:text-sm min-h-[44px]',
+        lg: 'px-6 py-3.5 text-sm sm:text-base min-h-[44px]',
+        icon: 'p-2.5 rounded-lg min-h-[44px] min-w-[44px]',
       },
     },
     defaultVariants: {

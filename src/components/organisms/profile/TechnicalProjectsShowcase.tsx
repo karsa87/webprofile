@@ -20,12 +20,12 @@ export function TechnicalProjectsShowcase({ projects }: TechnicalProjectsShowcas
   };
 
   return (
-    <section id="pro-projects" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 border-t border-gray-800/80">
+    <section id="pro-projects" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-b border-white/[0.08]">
       <SectionHeader
         align="left"
-        badgeLabel="Technical Showcase"
-        title="Portofolio Arsitektur Sistem"
-        description="Klik pada kartu untuk membaca studi kasus arsitektur, tantangan rekayasa, dan dampak kuantitatif terukur."
+        badgeLabel="Studi Kasus Arsitektur"
+        title="Portofolio Rekayasa & Optimasi Sistem"
+        description="Klik pada proyek untuk membaca tantangan teknis, arsitektur data, dan hasil optimasi performa terukur."
       />
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

@@ -12,14 +12,14 @@ import { getAllServices } from '@/application/services';
 import { generateStudioJsonLd } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Asrakit — Enterprise Software Studio & Solusi Sistem Bisnis',
+  title: 'Asrakit: Enterprise Software Studio & Solusi Sistem Bisnis',
   description:
     'Studio software kustom skala enterprise (ERP, WMS 100+ Cabang, POS Ritel, Gov Platform) untuk pemilik bisnis dan perusahaan berkembang.',
   alternates: {
     canonical: 'https://asrakit.com/',
   },
   openGraph: {
-    title: 'Asrakit — Enterprise Software Studio & Solusi Sistem Bisnis',
+    title: 'Asrakit: Enterprise Software Studio & Solusi Sistem Bisnis',
     description:
       'Software kustom skala enterprise (ERP, WMS 100+ Cabang, POS Ritel) tanpa biaya lisensi SaaS bulanan.',
     url: 'https://asrakit.com/',
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Asrakit — Enterprise Software Studio',
+    title: 'Asrakit: Enterprise Software Studio',
     description:
       'Software kustom skala enterprise yang mengakselerasi profit bisnis Anda.',
     images: ['/images/og-business.png'],
@@ -64,14 +64,14 @@ export default async function HomePage() {
       {/* Main Studio Navigation Header */}
       <StudioHeader />
 
-      <main className="flex-1">
+      <main id="main-content" className="flex-1">
         {/* Hero Section */}
         <BusinessHero />
 
-        {/* Problem Statement & Solutions Grid */}
+        {/* Problem Statement & Solutions Comparison Matrix */}
         <BusinessSolutions />
 
-        {/* Product Catalog Showcase */}
+        {/* Product Catalog Showcase with Flagship Spotlight */}
         <ProductCatalog services={services} />
 
         {/* Why Asrakit & Founder Spotlight */}

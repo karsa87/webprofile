@@ -1,9 +1,9 @@
 import React from 'react';
 import { cn } from '@/lib/utils';
 
-export function GradientText({ className, children, ...props }: React.HTMLAttributes<HTMLSpanElement>) {
+export function AccentText({ className, children, ...props }: React.HTMLAttributes<HTMLSpanElement>) {
   return (
-    <span className={cn('orange-gradient-text', className)} {...props}>
+    <span className={cn('text-orange-400 font-semibold', className)} {...props}>
       {children}
     </span>
   );
@@ -21,7 +21,7 @@ export function SectionTitle({
 }: SectionTitleProps) {
   return (
     <Component
-      className={cn('text-2xl sm:text-3xl font-extrabold tracking-tight text-white', className)}
+      className={cn('text-2xl sm:text-3xl font-bold tracking-tight text-slate-100', className)}
       {...props}
     >
       {children}
