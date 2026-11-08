@@ -4,9 +4,9 @@
 
 @layer base {
   :root {
-    --bg-canvas: #090D14;
-    --surface-card: #0E1420;
-    --surface-subtle: #141B2B;
+    --bg-canvas: #060913;
+    --surface-card: #0B111F;
+    --surface-subtle: #10182C;
     --border-hairline: rgba(255, 255, 255, 0.08);
     --border-strong: rgba(255, 255, 255, 0.16);
     --copper-accent: #F97316;
@@ -23,6 +23,13 @@
 
   body {
     background-color: var(--bg-canvas);
+    background-image: 
+      radial-gradient(circle at 50% 0%, rgba(249, 115, 22, 0.05) 0%, transparent 55%),
+      radial-gradient(circle at 85% 25%, rgba(14, 165, 233, 0.04) 0%, transparent 45%),
+      radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 28px 28px;
+    background-position: 0 0, 0 0, 0 0;
+    background-attachment: fixed;
     color: #94A3B8;
     font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
     -webkit-font-smoothing: antialiased;
@@ -81,7 +88,52 @@
   color: #F8FAFC;
 }
 
-/* Motion standard for reduced-motion users */
+/* Motion Level 2: Animated SVG Data Stream & Interactive Micro-Physics */
+@keyframes data-stream {
+  from {
+    stroke-dashoffset: 24;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes data-stream-reverse {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: 24;
+  }
+}
+
+.animate-data-stream {
+  stroke-dasharray: 4 6;
+  animation: data-stream 1.6s linear infinite;
+}
+
+.animate-data-stream-fast {
+  stroke-dasharray: 3 5;
+  animation: data-stream 1s linear infinite;
+}
+
+.animate-data-stream-reverse {
+  stroke-dasharray: 4 6;
+  animation: data-stream-reverse 1.6s linear infinite;
+}
+
+/* Tactile Card & Node Hover Reaction */
+.tactile-hover {
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tactile-hover:hover {
+  transform: translateY(-2px);
+  border-color: rgba(249, 115, 22, 0.35);
+  box-shadow: 0 8px 24px -8px rgba(249, 115, 22, 0.12);
+}
+
+/* Motion standard for reduced-motion users (R-39) */
 @media (prefers-reduced-motion: reduce) {
   *,
   ::before,
@@ -90,5 +142,14 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+  .animate-data-stream,
+  .animate-data-stream-fast,
+  .animate-data-stream-reverse {
+    animation: none !important;
+    stroke-dasharray: none !important;
+  }
+  .tactile-hover:hover {
+    transform: none !important;
   }
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { PageSwitcherBar } from '@/components/molecules/PageSwitcherBar';
 import { ProfileHeader } from '@/components/shared/ProfileHeader';
+import { RecruiterQuickBar } from '@/components/molecules/RecruiterQuickBar';
 import { ProfileFooter } from '@/components/shared/Footers';
 import { ProfileHero } from '@/components/organisms/profile/ProfileHero';
 import { CareerTimeline } from '@/components/organisms/profile/CareerTimeline';
@@ -68,8 +69,11 @@ export default async function ProfilePage() {
       {/* Profile Header Navigation */}
       <ProfileHeader />
 
+      {/* Recruiter Fast-Scan & Instant Action Bar */}
+      <RecruiterQuickBar />
+
       <main id="main-content" className="flex-1">
-        {/* Profile Hero & Overview */}
+        {/* Profile Hero & Overview with Real Portrait Photo */}
         <ProfileHero />
 
         {/* Work Experience Timeline */}

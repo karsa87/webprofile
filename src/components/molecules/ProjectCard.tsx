@@ -11,7 +11,7 @@ export interface ProjectCardProps {
 
 export function ProjectCard({ project, onSelect }: ProjectCardProps) {
   return (
-    <Card className="flex flex-col justify-between p-6 rounded-xl bg-[#0C121D] border border-white/[0.08] hover:border-white/20 transition-colors">
+    <Card className="flex flex-col justify-between p-6 rounded-xl bg-[#0C121D] border border-white/[0.08] tactile-hover">
       <div>
         <div className="flex items-center justify-between gap-2 mb-3">
           <Badge variant="brand" size="sm">
@@ -45,11 +45,16 @@ export function ProjectCard({ project, onSelect }: ProjectCardProps) {
         type="button"
         variant="secondary"
         size="sm"
-        className="w-full"
+        className="w-full gap-2"
         onClick={() => onSelect(project)}
         aria-label={`Buka rincian arsitektur untuk ${project.title}`}
       >
-        Detail Solusi & Arsitektur
+        <svg className="w-3.5 h-3.5 text-orange-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+          <path d="M2 12h20" />
+          <path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-6" />
+          <path d="m12 2 4 4-4 4" />
+        </svg>
+        <span>Detail Solusi & Arsitektur</span>
       </Button>
     </Card>
   );

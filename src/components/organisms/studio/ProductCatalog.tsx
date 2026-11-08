@@ -94,7 +94,7 @@ export function ProductCatalog({ services }: ProductCatalogProps) {
         {supporting.map((service) => (
           <Card
             key={service.id}
-            className="p-6 rounded-xl bg-[#0C121D] flex flex-col justify-between"
+            className="p-6 rounded-xl bg-[#0C121D] flex flex-col justify-between tactile-hover"
           >
             <div>
               <div className="flex items-center justify-between gap-2 mb-3">
@@ -106,9 +106,36 @@ export function ProductCatalog({ services }: ProductCatalogProps) {
                 )}
               </div>
 
-              <h4 className="text-lg font-bold text-white mb-2">
-                {service.title}
-              </h4>
+              <div className="flex items-center gap-2 mb-2">
+                <div className="w-8 h-8 rounded-lg bg-[#0E1626] border border-white/10 flex items-center justify-center text-orange-400 shrink-0">
+                  {service.id.includes('erp') ? (
+                    <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                      <path d="M2 20h20" />
+                      <path d="m5 10 7-7 7 7v10H5Z" />
+                      <path d="M9 20v-6h6v6" />
+                    </svg>
+                  ) : service.id.includes('pos') ? (
+                    <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                      <rect x="2" y="4" width="20" height="16" rx="2" />
+                      <path d="M6 8h.01" />
+                      <path d="M10 8h.01" />
+                      <path d="M14 8h.01" />
+                      <path d="M18 8h.01" />
+                      <path d="M8 12h8" />
+                      <path d="M8 16h4" />
+                    </svg>
+                  ) : (
+                    <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" />
+                      <path d="m9 12 2 2 4-4" />
+                    </svg>
+                  )}
+                </div>
+                <h4 className="text-lg font-bold text-white">
+                  {service.title}
+                </h4>
+              </div>
+
               <p className="text-xs text-slate-400 leading-relaxed mb-5">
                 {service.description}
               </p>

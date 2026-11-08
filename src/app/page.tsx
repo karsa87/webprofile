@@ -5,7 +5,9 @@ import { StudioHeader } from '@/components/shared/StudioHeader';
 import { StudioFooter } from '@/components/shared/Footers';
 import { BusinessHero } from '@/components/organisms/studio/BusinessHero';
 import { BusinessSolutions } from '@/components/organisms/studio/BusinessSolutions';
+import { RoiSavingsCalculator } from '@/components/molecules/RoiSavingsCalculator';
 import { ProductCatalog } from '@/components/organisms/studio/ProductCatalog';
+import { SystemTopologyVisualizer } from '@/components/molecules/SystemTopologyVisualizer';
 import { WhyAsrakit } from '@/components/organisms/studio/WhyAsrakit';
 import { BusinessContactCta } from '@/components/organisms/studio/BusinessContactCta';
 import { getAllServices } from '@/application/services';
@@ -65,19 +67,38 @@ export default async function HomePage() {
       <StudioHeader />
 
       <main id="main-content" className="flex-1">
-        {/* Hero Section */}
+        {/* Hero Section: Split Screen with Interactive Dashboard Mockup */}
         <BusinessHero />
 
         {/* Problem Statement & Solutions Comparison Matrix */}
         <BusinessSolutions />
 
+        {/* Interactive Feature: ROI SaaS Savings Calculator */}
+        <RoiSavingsCalculator />
+
         {/* Product Catalog Showcase with Flagship Spotlight */}
         <ProductCatalog services={services} />
 
-        {/* Why Asrakit & Founder Spotlight */}
+        {/* Distributed Architecture Topology Blueprint */}
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-b border-white/[0.08]">
+          <div className="max-w-3xl mx-auto text-center mb-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-orange-500/10 border border-orange-500/20 text-orange-400 font-mono text-xs font-semibold mb-4">
+              BLUEPRINT ARSITEKTUR TEKNIS
+            </div>
+            <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
+              Topologi Sistem Terdistribusi Skala Tinggi
+            </h2>
+            <p className="text-sm text-slate-300 mt-3 leading-relaxed">
+              Arsitektur terpisah dari tingkat Edge Client, API Gateway, Cache Cluster, hingga Replikasi Database untuk menjamin nol downtime saat beban transaksi puncak.
+            </p>
+          </div>
+          <SystemTopologyVisualizer />
+        </section>
+
+        {/* Why Asrakit & Direct Engineer Commitment */}
         <WhyAsrakit />
 
-        {/* Inbound Lead CTA */}
+        {/* Inbound Lead Consultation CTA */}
         <BusinessContactCta />
       </main>
 

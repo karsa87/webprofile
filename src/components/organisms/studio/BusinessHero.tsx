@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { WhatsAppCtaButton } from '@/components/molecules/WhatsAppCtaButton';
 import { MetricCounter } from '@/components/molecules/MetricCounter';
+import { EnterpriseDashboardMockup } from '@/components/molecules/EnterpriseDashboardMockup';
 
 const TRUST_STATS = [
   {
@@ -28,42 +29,69 @@ const TRUST_STATS = [
 
 export function BusinessHero() {
   return (
-    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-20 border-b border-white/[0.08]">
-      <div className="max-w-4xl mx-auto text-center">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded border border-orange-500/30 bg-orange-500/10 text-orange-400 text-xs font-mono font-medium mb-8">
-          Enterprise Bespoke Software Studio
+    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-20 border-b border-white/[0.08]">
+      {/* Dynamic 2-Column Split Hero */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center mb-16">
+        {/* Left Column: Commercial Value Proposition */}
+        <div className="lg:col-span-7">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-orange-500/10 border border-orange-500/30 text-orange-400 text-xs font-mono font-medium mb-6">
+            <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
+            Enterprise Bespoke Software Studio
+          </div>
+
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.12] mb-6">
+            Sistem Kustom Skala Enterprise untuk{' '}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-300">
+              Efisiensi & Profit Bisnis Nyata.
+            </span>
+          </h1>
+
+          <p className="text-base sm:text-lg text-slate-300 max-w-xl leading-relaxed mb-8">
+            Asrakit merancang <strong className="text-white">ERP Manufaktur, Warehouse Management (100+ Cabang), dan POS Ritel Multi-Toko</strong>.
+            Sistem dibangun sekali bayar sesuai alur bisnis Anda: <span className="text-white font-medium">100% hak milik kode sumber</span>, tanpa ketergantungan lisensi SaaS bulanan.
+          </p>
+
+          <div className="flex flex-col sm:flex-row items-center gap-3.5 mb-8">
+            <WhatsAppCtaButton
+              label="Konsultasikan Kebutuhan Sistem"
+              size="lg"
+              className="w-full sm:w-auto"
+              leadOptions={{ type: 'general' }}
+              sourceSection="business_hero"
+            />
+
+            <a
+              href="#biz-roi"
+              className="w-full sm:w-auto px-5 py-3.5 rounded-lg bg-[#0E1524] hover:bg-[#162035] text-slate-200 border border-white/10 hover:border-orange-500/30 font-semibold text-xs transition-colors flex items-center justify-center gap-2 min-h-[44px]"
+            >
+              <span>Hitung Estimasi Penghematan</span>
+            </a>
+          </div>
+
+          <div className="flex items-center gap-6 text-xs font-mono text-slate-400 pt-4 border-t border-white/[0.08]">
+            <div className="flex items-center gap-1.5">
+              <span className="text-emerald-400 font-bold">✓</span>
+              <span>100% Source Code Delivery</span>
+            </div>
+            <div className="flex items-center gap-1.5">
+              <span className="text-emerald-400 font-bold">✓</span>
+              <span>Direct Lead Engineer</span>
+            </div>
+            <div className="flex items-center gap-1.5">
+              <span className="text-emerald-400 font-bold">✓</span>
+              <span>Nol Biaya Royalti</span>
+            </div>
+          </div>
         </div>
 
-        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.12] mb-6">
-          Software Kustom Skala Enterprise untuk{' '}
-          <span className="text-orange-400">Efisiensi Operasional Nyata.</span>
-        </h1>
-
-        <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto mb-10 leading-relaxed">
-          Asrakit membangun sistem <strong className="text-white">ERP, Warehouse Management (100+ Cabang), POS Ritel Multi-Toko</strong>,
-          dan platform pelaporan terpusat. Kode sumber 100% milik Anda, tanpa ketergantungan lisensi SaaS pihak ketiga.
-        </p>
-
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 max-w-md mx-auto mb-16">
-          <WhatsAppCtaButton
-            label="Konsultasikan Kebutuhan Sistem"
-            size="lg"
-            className="w-full sm:w-auto"
-            leadOptions={{ type: 'general' }}
-            sourceSection="business_hero"
-          />
-
-          <Link
-            href="/profile"
-            className="w-full sm:w-auto px-5 py-3 rounded-lg bg-[#121A29] hover:bg-[#1A2336] text-slate-200 border border-white/10 hover:border-white/20 font-semibold text-xs transition-colors flex items-center justify-center gap-2 min-h-[44px]"
-          >
-            <span>Rekam Jejak Principal Engineer</span>
-          </Link>
+        {/* Right Column: Live Interactive Software Mockup */}
+        <div className="lg:col-span-5">
+          <EnterpriseDashboardMockup />
         </div>
       </div>
 
-      {/* Trust Metrics Bar: Hairline Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
+      {/* Trust Metrics Bar: Hairline Grid with Animated Numbers */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-7xl mx-auto">
         {TRUST_STATS.map((stat) => (
           <MetricCounter
             key={stat.label}

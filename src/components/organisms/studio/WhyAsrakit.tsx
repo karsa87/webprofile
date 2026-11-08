@@ -15,11 +15,16 @@ export function WhyAsrakit() {
             Dikerjakan Langsung oleh Senior Engineer, Tanpa Perantara Agensi.
           </SectionTitle>
 
-          <div className="space-y-5 text-xs text-slate-300 leading-relaxed mb-6">
-            <div className="flex items-start gap-3.5 p-3.5 rounded-lg bg-[#0C121D] border border-white/[0.06]">
-              <span className="font-mono text-orange-400 font-bold text-sm shrink-0">01</span>
+          <div className="space-y-4 text-xs text-slate-300 leading-relaxed mb-6">
+            <div className="flex items-start gap-3.5 p-4 rounded-lg bg-[#0C121D] border border-white/[0.06] tactile-hover">
+              <div className="p-2 rounded bg-orange-500/10 border border-orange-500/20 text-orange-400 shrink-0">
+                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" />
+                  <path d="m9 12 2 2 4-4" />
+                </svg>
+              </div>
               <div>
-                <strong className="text-white block mb-0.5">Arsitektur Teruji di Skala Nasional</strong>
+                <strong className="text-white block mb-0.5 text-sm">Arsitektur Teruji di Skala Nasional</strong>
                 <span>
                   Sistem Anda dibangun dengan standar keandalan yang sama seperti sistem di{' '}
                   <strong className="text-slate-100">Perum BULOG</strong> dan{' '}
@@ -28,20 +33,33 @@ export function WhyAsrakit() {
               </div>
             </div>
 
-            <div className="flex items-start gap-3.5 p-3.5 rounded-lg bg-[#0C121D] border border-white/[0.06]">
-              <span className="font-mono text-orange-400 font-bold text-sm shrink-0">02</span>
+            <div className="flex items-start gap-3.5 p-4 rounded-lg bg-[#0C121D] border border-white/[0.06] tactile-hover">
+              <div className="p-2 rounded bg-orange-500/10 border border-orange-500/20 text-orange-400 shrink-0">
+                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="m18 16 4-4-4-4" />
+                  <path d="m6 8-4 4 4 4" />
+                  <path d="m14.5 4-5 16" />
+                </svg>
+              </div>
               <div>
-                <strong className="text-white block mb-0.5">Kepemilikan Penuh & Dokumentasi Kode</strong>
+                <strong className="text-white block mb-0.5 text-sm">Kepemilikan Penuh & Dokumentasi Kode</strong>
                 <span>
                   Seluruh repositori kode sumber, dokumentasi arsitektur, dan database schema diserahkan 100% kepada Anda tanpa biaya keterikatan vendor.
                 </span>
               </div>
             </div>
 
-            <div className="flex items-start gap-3.5 p-3.5 rounded-lg bg-[#0C121D] border border-white/[0.06]">
-              <span className="font-mono text-orange-400 font-bold text-sm shrink-0">03</span>
+            <div className="flex items-start gap-3.5 p-4 rounded-lg bg-[#0C121D] border border-white/[0.06] tactile-hover">
+              <div className="p-2 rounded bg-orange-500/10 border border-orange-500/20 text-orange-400 shrink-0">
+                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                  <circle cx="9" cy="7" r="4" />
+                  <line x1="19" x2="19" y1="8" y2="14" />
+                  <line x1="22" x2="16" y1="11" y2="11" />
+                </svg>
+              </div>
               <div>
-                <strong className="text-white block mb-0.5">Komunikasi Teknis Transparan</strong>
+                <strong className="text-white block mb-0.5 text-sm">Komunikasi Teknis Transparan</strong>
                 <span>
                   Ruang lingkup kerja disepakati terperinci sejak awal (SOW jelas) tanpa biaya tersembunyi, dengan garansi pemeliharaan pasca serah terima.
                 </span>
@@ -52,7 +70,7 @@ export function WhyAsrakit() {
 
         {/* Founder Spotlight Card */}
         <div className="lg:col-span-6">
-          <div className="p-8 rounded-xl bg-[#0E1524] border border-white/[0.14] shadow-sm">
+          <div className="p-8 rounded-xl bg-[#0E1524] border border-white/[0.14] shadow-sm tactile-hover">
             <div className="flex items-center gap-4 mb-6">
               <div className="w-16 h-16 rounded-xl bg-orange-600 flex items-center justify-center font-extrabold text-2xl text-white border border-orange-500/50 shadow-sm shrink-0">
                 MK
